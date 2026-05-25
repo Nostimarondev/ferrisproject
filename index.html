@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferris - Rust's Beloved Rustacean!</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Meet Ferris, the beloved crab mascot of Rust. Join the Ferris Army, explore our ecosystem, and embrace the code.">
+  <meta property="og:title" content="Ferris - Rust's Beloved Rustacean!">
+  <meta property="og:description"
+    content="Meet Ferris, the beloved crab mascot of Rust. Join the Ferris Army, explore our ecosystem, and embrace the code.">
+  <meta property="og:type" content="website">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Londrina+Solid:wght@300;400;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Floating Header / Navigation Bar -->
+  <header class="header-container">
+    <div class="header-inner">
+      <!-- Logo left -->
+      <a href="#" class="logo-link">
+        <img src="img/3_-_Logo_2.png" alt="Ferris Logo" class="logo-img">
+      </a>
+
+      <!-- Capsule navigation menu -->
+      <nav class="nav-capsule">
+        <a href="#about" class="nav-link nav-about">ABOUT</a>
+        <a href="#gallery" class="nav-link nav-gallery">GALLERY</a>
+        <a href="https://t.me/ferricrab" target="_blank" rel="noopener noreferrer"
+          class="nav-link nav-telegram">TELEGRAM</a>
+        <a href="https://x.com/ferricrab" target="_blank" rel="noopener noreferrer" class="nav-link nav-x">X</a>
+        <a href="https://dexscreener.com" target="_blank" rel="noopener noreferrer" class="nav-link nav-chart">CHART</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Side Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <img src="img/3_-_Logo_2.png" alt="Ferris Logo" class="drawer-logo">
+      <button class="drawer-close-btn" id="drawerCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="drawer-links">
+      <a href="#about" class="drawer-link">ABOUT</a>
+      <a href="#gallery" class="drawer-link">GALLERY</a>
+      <a href="https://t.me/ferricrab" target="_blank" rel="noopener noreferrer" class="drawer-link">TELEGRAM</a>
+      <a href="https://x.com/ferricrab" target="_blank" rel="noopener noreferrer" class="drawer-link">X</a>
+      <a href="https://dexscreener.com" target="_blank" rel="noopener noreferrer" class="drawer-link">CHART</a>
+    </div>
+    <div class="drawer-socials">
+      <a href="https://x.com/ferricrab" target="_blank" class="drawer-social-btn"><i
+          class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://t.me/ferricrab" target="_blank" class="drawer-social-btn"><i
+          class="fa-brands fa-telegram"></i></a>
+      <a href="https://instagram.com" target="_blank" class="drawer-social-btn"><i
+          class="fa-brands fa-instagram"></i></a>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- Hero Section with Interactive Multi-Layer Parallax -->
+  <section class="hero-section" id="hero">
+    <!-- Layer 1: Background -->
+    <div class="parallax-layer layer-bg" data-depth="0.1">
+      <img src="img/1_-_BG.png" alt="Beach Background">
+    </div>
+
+    <!-- Layer 2: Ferris Crab -->
+    <div class="parallax-layer layer-ferris" data-depth="0.4">
+      <img src="img/4_-_FERRIS.png" alt="Ferris Crab">
+    </div>
+
+    <!-- Layer 3: Main Text "FERRIS RUST'S BELOVED RUSTACEAN!" -->
+    <div class="parallax-layer layer-text" data-depth="0.2">
+      <img src="img/2_-_FERRIS_MAIN_TEXT.png" alt="Ferris Text">
+    </div>
+
+    <!-- Layer 4: Umbrella (Left Foreground) -->
+    <div class="parallax-layer layer-umbrella" data-depth="0.6">
+      <img src="img/6_UMBRELLA.png" alt="Beach Umbrella">
+    </div>
+
+    <!-- Layer 5: Beach Ball (Right Background) -->
+    <div class="parallax-layer layer-ball" data-depth="0.3">
+      <img src="img/5_-_BALL.png" alt="Beach Ball">
+    </div>
+
+    <!-- Layer 6: Shovel (Bottom Right Foreground) -->
+    <div class="parallax-layer layer-shovel" data-depth="0.8">
+      <img src="img/7_SHOVEL.png" alt="Shovel">
+    </div>
+
+    <!-- Scroll Down Indicator -->
+    <div class="scroll-down-indicator">
+      <a href="#about" class="chevron-down-link">
+        <i class="fa-solid fa-chevron-down animate-bounce"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Section 1: Meet Ferris the Crab (About) -->
+  <section class="meet-section" id="about">
+    <div class="section-container">
+      <div class="meet-layout">
+        <!-- Text content -->
+        <div class="meet-text-content">
+          <h1 class="section-title">Meet Ferris</h1>
+          <p class="section-paragraph">
+            Ferris is the friendly, adorable, and slightly chaotic crab mascot of the Rust programming language. He
+            helps developers catch bugs, writes bulletproof code, and rules the beaches with pincers of steel.
+          </p>
+        </div>
+
+        <!-- Action / Carousel stats controls -->
+        <div class="meet-slider-controls">
+          <button class="slider-btn prev-btn" id="sliderPrevBtn" disabled>
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button class="slider-btn next-btn" id="sliderNextBtn">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Carousel Cards container -->
+      <div class="carousel-container" id="meetCarousel">
+        <div class="carousel-track" id="meetCarouselTrack">
+          <!-- Slide 1: Instagram Card -->
+          <div class="carousel-slide card-social instagram-card">
+            <div class="card-inner">
+              <div class="pulse-loader"></div>
+              <img src="img/1.jpg" alt="Ferris Instagram Post" class="card-media">
+              <div class="card-overlay">
+                <i class="fa-brands fa-telegram overlay-icon"></i>
+              </div>
+              <div class="card-badge">
+                <i class="fa-brands fa-telegram"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2: Stats Column (Followers & Views) -->
+          <div class="carousel-slide stats-slide">
+            <div class="stats-track">
+              <!-- Followers Stat Box -->
+              <div class="stat-box bg-orange">
+                <h3 class="stat-number">10M</h3>
+                <p class="stat-label">CRAB ARMY</p>
+              </div>
+              <!-- Views Stat Box -->
+              <div class="stat-box bg-green">
+                <h3 class="stat-number">5B+</h3>
+                <p class="stat-label">BUGS CRUSHED</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3: TikTok Card -->
+          <div class="carousel-slide card-social tiktok-card">
+            <div class="card-inner">
+              <div class="pulse-loader"></div>
+              <img src="img/2.jpg" alt="Ferris TikTok Post" class="card-media">
+              <div class="card-overlay">
+                <i class="fa-brands fa-x-twitter overlay-icon"></i>
+              </div>
+              <div class="card-badge">
+                <i class="fa-brands fa-x-twitter"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4: YouTube Card -->
+          <div class="carousel-slide card-social youtube-card">
+            <div class="card-inner">
+              <div class="pulse-loader"></div>
+              <img src="img/3.jpg" alt="Ferris YouTube Video" class="card-media">
+              <div class="card-overlay">
+                <i class="fa-brands fa-telegram overlay-icon"></i>
+              </div>
+              <div class="card-badge">
+                <i class="fa-brands fa-telegram"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5: Twitter Card -->
+          <div class="carousel-slide card-social twitter-card">
+            <div class="card-inner">
+              <div class="pulse-loader"></div>
+              <img src="img/4.jpg" alt="Ferris X Post" class="card-media">
+              <div class="card-overlay">
+                <i class="fa-brands fa-x-twitter overlay-icon"></i>
+              </div>
+              <div class="card-badge">
+                <i class="fa-brands fa-x-twitter"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- See All Ferris Links Button -->
+      <div class="see-all-links-container">
+        <a href="https://linktr.ee/ferriscrab" target="_blank" rel="noopener noreferrer" class="btn-primary-wrapper">
+          <button class="btn-primary">
+            <span class="btn-front">
+              SEE ALL FERRIS LINKS <i class="fa-solid fa-arrow-right icon-arrow"></i>
+            </span>
+            <span class="btn-back">
+              SEE ALL FERRIS LINKS <i class="fa-solid fa-arrow-right icon-arrow"></i>
+            </span>
+          </button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Ferris Army Grid Section -->
+  <section class="army-section" id="gallery">
+    <div class="section-container">
+      <div class="army-header">
+        <h2 class="section-title text-center">Ferris Army</h2>
+        <p class="section-paragraph text-center max-w-2xl mx-auto">
+          More than a community. A collective driven by clean code, safe memory, and the ocean breeze that makes Ferris
+          unstoppable.
+        </p>
+      </div>
+
+      <div class="army-grid">
+        <!-- Big Card: Join the Army (Left Column, spans 2) -->
+        <div class="grid-card main-army-card">
+          <div class="card-media-wrapper">
+            <img src="img/8_-_Army.png" alt="Ferris Army" class="army-img">
+            <div class="card-media-overlay"></div>
+          </div>
+          <div class="main-card-content">
+            <div class="live-indicator">
+              <span class="pulse-dot-wrapper">
+                <span class="pulse-dot-ping"></span>
+                <span class="pulse-dot-solid"></span>
+              </span>
+              <span class="live-text">LIVE RECRUITMENT</span>
+            </div>
+            <h3 class="card-title-large">Join the Army</h3>
+          </div>
+        </div>
+
+        <!-- Right Side: Helmet and Social Cards (Flex/Grid) -->
+        <div class="grid-card-column">
+          <!-- Helmet Tool Card (Vibrant Green) -->
+          <div class="grid-card helmet-card">
+            <div class="helmet-card-content">
+              <h3 class="card-title-medium">FERRIS PFP MAKER!</h3>
+              <p class="card-text-light">Adopt a Rustacean and join the FERRIS movement!</p>
+            </div>
+            <div class="helmet-card-btn-container">
+              <button class="btn-secondary">
+                <span class="btn-front-sec">Coming soon</span>
+                <span class="btn-back-sec">Coming soon</span>
+              </button>
+            </div>
+            <img src="img/6_UMBRELLA.png" alt="Helmet Mascot" class="helmet-illustration">
+          </div>
+
+          <!-- Small Socials Subgrid (Telegram & X) -->
+          <div class="socials-subgrid">
+            <a href="https://t.me/ferricrab" target="_blank" class="grid-card sub-social-card telegram-bg">
+              <div class="sub-card-content">
+                <h3 class="sub-card-title">Join The Headquarters</h3>
+              </div>
+              <div class="sub-card-icon">
+                <img src="img/3_-_Logo_2.png" alt="Telegram Icon" class="sub-icon-img">
+              </div>
+            </a>
+            <a href="https://x.com/ferricrab" target="_blank" class="grid-card sub-social-card x-bg">
+              <div class="sub-card-content">
+                <h3 class="sub-card-title">Stay Updated</h3>
+              </div>
+              <div class="sub-card-icon">
+                <i class="fa-brands fa-x-twitter sub-icon-fa"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carrusel Marquee ("I am Ferris, You are Ferris, We are Ferris!") -->
+      <div class="marquee-wrapper">
+        <div class="marquee-title-container">
+          <h3 class="marquee-section-title">I am Ferris, You are Ferris, We are Ferris!</h3>
+        </div>
+        <div class="marquee-slider-container">
+          <div class="marquee-track" id="marqueeTrack">
+            <!-- Images img/1.jpg to img/8.jpg will be inserted and duplicated for loop -->
+            <div class="marquee-slide"><img src="img/1.jpg" alt="Army 1"></div>
+            <div class="marquee-slide"><img src="img/2.jpg" alt="Army 2"></div>
+            <div class="marquee-slide"><img src="img/3.jpg" alt="Army 3"></div>
+            <div class="marquee-slide"><img src="img/4.jpg" alt="Army 4"></div>
+            <div class="marquee-slide"><img src="img/5.jpg" alt="Army 5"></div>
+            <div class="marquee-slide"><img src="img/6.jpg" alt="Army 6"></div>
+            <div class="marquee-slide"><img src="img/7.jpg" alt="Army 7"></div>
+            <div class="marquee-slide"><img src="img/8.jpg" alt="Army 8"></div>
+
+            <!-- Duplicated for seamless loop -->
+            <div class="marquee-slide"><img src="img/1.jpg" alt="Army 1"></div>
+            <div class="marquee-slide"><img src="img/2.jpg" alt="Army 2"></div>
+            <div class="marquee-slide"><img src="img/3.jpg" alt="Army 3"></div>
+            <div class="marquee-slide"><img src="img/4.jpg" alt="Army 4"></div>
+            <div class="marquee-slide"><img src="img/5.jpg" alt="Army 5"></div>
+            <div class="marquee-slide"><img src="img/6.jpg" alt="Army 6"></div>
+            <div class="marquee-slide"><img src="img/7.jpg" alt="Army 7"></div>
+            <div class="marquee-slide"><img src="img/8.jpg" alt="Army 8"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <!-- Logo and Slogan -->
+        <div class="footer-brand">
+          <img src="img/3_-_Logo_2.png" alt="Ferris Logo" class="footer-logo">
+          <p class="footer-slogan">The degen crab in all of us.</p>
+          <div class="footer-social-links">
+            <a href="https://x.com/ferricrab" target="_blank" rel="noopener noreferrer"><i
+                class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://t.me/ferricrab" target="_blank" rel="noopener noreferrer"><i
+                class="fa-brands fa-telegram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">© 2026 Ferris. All rights reserved. Not directly affiliated with the Rust Foundation.</p>
+        <p class="disclaimer-text">Disclaimer: Ferris is a memecoin created for entertainment purposes. Investing in cryptocurrency involves high risks.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP & ScrollTrigger Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+
+</html>
