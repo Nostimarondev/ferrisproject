@@ -90,7 +90,7 @@ button {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 900;
   padding: 24px 40px;
   transition: var(--transition-smooth);
 }
@@ -214,51 +214,35 @@ button {
   color: var(--color-white);
 }
 
-/* Menu Button */
-.menu-toggle-btn {
-  background-color: var(--color-primary-red);
-  color: var(--color-white);
-  font-family: var(--font-title);
-  font-size: 20px;
-  padding: 10px 28px;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(222, 63, 33, 0.3);
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  background-color: transparent;
+  color: var(--color-black);
+  font-size: 32px;
+  padding: 8px;
   transition: var(--transition-smooth);
-  position: relative;
-  overflow: hidden;
-  -webkit-text-stroke: 1px var(--color-white);
-}
-
-.menu-toggle-btn::after {
-  content: '';
   position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-accent-orange);
-  transition: var(--transition-smooth);
-  z-index: 1;
+  right: 0;
 }
 
-.menu-toggle-btn:hover::after {
-  top: 0;
-}
-
-.menu-toggle-btn .btn-text {
-  position: relative;
-  z-index: 2;
-}
-
-.menu-toggle-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(222, 63, 33, 0.4);
+.mobile-menu-btn:hover {
+  transform: scale(1.1);
+  color: var(--color-primary-red);
 }
 
 /* Responsive Nav elements */
 @media (max-width: 1100px) {
   .nav-capsule {
     display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .header-inner {
+    min-height: 48px;
   }
 }
 
@@ -288,7 +272,7 @@ button {
   max-width: 400px;
   height: 100vh;
   background-color: var(--color-white);
-  z-index: 200;
+  z-index: 999;
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-col: column;
@@ -367,7 +351,7 @@ button {
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(4px);
-  z-index: 199;
+  z-index: 998;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -416,17 +400,22 @@ button {
 .layer-ferris img {
   width: 50%;
   height: auto;
-  left: 25%;
-  bottom: 80px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 15%;
   top: auto;
   object-fit: contain;
 }
 
 .layer-text img {
-  width: 70%;
+  width: 55%;
   height: auto;
-  left: 15%;
-  top: 54%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 12%;
+  top: auto;
   object-fit: contain;
 }
 
@@ -509,13 +498,13 @@ button {
 @media (max-width: 900px) {
   .layer-ferris img {
     width: 70%;
-    left: 15%;
+    bottom: 35%;
   }
 
   .layer-text img {
-    width: 85%;
-    left: 7.5%;
-    top: 45%;
+    width: 75%;
+    bottom: 20%;
+    top: auto;
   }
 
   .layer-umbrella img {
@@ -532,6 +521,41 @@ button {
   .layer-shovel img {
     width: 38%;
     bottom: -6%;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    min-height: 100vh;
+    /* Adjust if it takes up too much space on small phones */
+  }
+
+  .layer-ferris img {
+    width: 90%;
+    bottom: 35%;
+  }
+
+  .layer-text img {
+    width: 90%;
+    bottom: 22%;
+    top: auto;
+  }
+
+  .layer-umbrella img {
+    width: 55%;
+    bottom: -10%;
+  }
+
+  .layer-ball img {
+    width: 45%;
+    right: -5%;
+    top: 8%;
+  }
+
+  .layer-shovel img {
+    width: 50%;
+    bottom: -8%;
+    right: -5%;
   }
 }
 
@@ -866,6 +890,34 @@ button {
   }
 }
 
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 40px;
+  }
+
+  .section-paragraph {
+    font-size: 16px;
+  }
+
+  .carousel-slide {
+    flex: 0 0 260px;
+    /* or 80vw to fit on screen */
+  }
+
+  .stats-slide {
+    flex: 0 0 200px;
+  }
+
+  .stat-number {
+    font-size: 36px;
+  }
+
+  .btn-primary {
+    font-size: 18px;
+    padding: 12px 32px;
+  }
+}
+
 /* ==========================================================================
    SECTION 6: FERRIS ARMY
    ========================================================================== */
@@ -1176,6 +1228,35 @@ button {
   }
 }
 
+@media (max-width: 600px) {
+  .main-army-card {
+    height: 300px;
+    padding: 16px;
+  }
+
+  .card-title-large {
+    font-size: 28px;
+  }
+
+  .helmet-card {
+    height: 280px;
+    padding: 20px;
+  }
+
+  .card-title-medium {
+    font-size: 26px;
+  }
+
+  .socials-subgrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sub-social-card {
+    height: 120px;
+    /* give them explicit height since they're no longer in a strict grid row with a sibling */
+  }
+}
+
 /* ==========================================================================
    MARQUEE CAROUSEL
    ========================================================================== */
@@ -1375,5 +1456,17 @@ button {
   .footer-links-grid {
     width: 100%;
     justify-content: space-around;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-links-grid {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .footer-bottom {
+    text-align: center;
   }
 }
